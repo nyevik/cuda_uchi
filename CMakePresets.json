@@ -12,7 +12,8 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CUDA_ARCHITECTURES": "native"
       }
     },
     {
@@ -27,11 +28,13 @@
   "buildPresets": [
     {
       "name": "default",
-      "configurePreset": "default"
+      "configurePreset": "default",
+      "verbose": true
     },
     {
       "name": "all-executables",
       "configurePreset": "default",
+      "verbose": true,
       "targets": [
         "all_executables"
       ]
@@ -39,6 +42,7 @@
     {
       "name": "smoke-test",
       "configurePreset": "default",
+      "verbose": true,
       "targets": [
         "smoke_test_all"
       ]
@@ -46,13 +50,15 @@
     {
       "name": "simd-ex-mod",
       "configurePreset": "default",
+      "verbose": true,
       "targets": [
         "simd_ex_mod_all"
       ]
     },
     {
       "name": "debug",
-      "configurePreset": "debug"
+      "configurePreset": "debug",
+      "verbose": true
     }
   ]
 }

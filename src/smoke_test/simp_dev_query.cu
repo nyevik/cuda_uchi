@@ -1,7 +1,8 @@
 #include <cuda_runtime.h>
 #include <iostream>
 
-int main() {
+int main()
+{
     cudaDeviceProp deviceProp{};
     cudaGetDeviceProperties(&deviceProp, 0);
     std::cout << "Device name: " << deviceProp.name << std::endl;
@@ -16,7 +17,7 @@ int main() {
               << deviceProp.maxGridSize[1] << ", " << deviceProp.maxGridSize[2] << "]" << std::endl;
     std::cout << "Total constant memory: " << deviceProp.totalConstMem / 1024 << " KB" << std::endl;
     std::cout << "Compute capability: " << deviceProp.major << "." << deviceProp.minor << std::endl;
+    std::cout << "Compute capability (numeric): " << deviceProp.major * 10 + deviceProp.minor << std::endl;
     std::cout << "Multi-processor count: " << deviceProp.multiProcessorCount << std::endl;
-    return 0;       
-
+    return 0;
 }

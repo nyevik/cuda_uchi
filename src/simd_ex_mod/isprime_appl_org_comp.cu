@@ -19,7 +19,7 @@
  * or, in other words, the number that has no positive divisors other than 1 and itself.
  */
 bool isPrimeCpu(long long num)
-{
+{ //////// This function is not optimized for large numbers, but it serves as a baseline for comparison with the GPU implementation.
 
     if (num <= 1)
         return false;
