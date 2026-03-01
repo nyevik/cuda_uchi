@@ -16,3 +16,5 @@ foreach(target IN LISTS SMOKE_TEST_CUDA_TARGETS)
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
   )
 endforeach()
+
+add_custom_target(smoke_test_all DEPENDS ${SMOKE_TEST_CUDA_TARGETS})

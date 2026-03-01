@@ -8,13 +8,22 @@ foreach(candidate IN LISTS module_candidates)
 endforeach()
 list(SORT CUDA_UCHI_MODULE_DIRS)
 
+add_custom_target(all_executables)
+
 foreach(module IN LISTS CUDA_UCHI_MODULE_DIRS)
   set(module_source_dir "${CMAKE_CURRENT_SOURCE_DIR}/${module}")
   set(module_binary_dir "${CMAKE_BINARY_DIR}/${module}")
   file(MAKE_DIRECTORY "${module_binary_dir}")
 
   if(EXISTS "${module_source_dir}/CMakeLists.txt")
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${module_binary_dir}")
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${module_binary_dir}")
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${module_binary_dir}")
     add_subdirectory("${module_source_dir}" "${module_binary_dir}")
+
+    if(TARGET "${module}_all")
+      add_dependencies(all_executables "${module}_all")
+    endif()
   else()
     string(MAKE_C_IDENTIFIER "${module}" module_id)
     add_custom_target("stub_${module_id}"

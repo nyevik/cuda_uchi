@@ -30,6 +30,27 @@
       "configurePreset": "default"
     },
     {
+      "name": "all-executables",
+      "configurePreset": "default",
+      "targets": [
+        "all_executables"
+      ]
+    },
+    {
+      "name": "smoke-test",
+      "configurePreset": "default",
+      "targets": [
+        "smoke_test_all"
+      ]
+    },
+    {
+      "name": "simd-ex-mod",
+      "configurePreset": "default",
+      "targets": [
+        "simd_ex_mod_all"
+      ]
+    },
+    {
       "name": "debug",
       "configurePreset": "debug"
     }
