@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <cuda_runtime.h>
 
 __global__ void k(int *out) {
   out[0] = 1234;

@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.24)
+
+project(cuda_uchi LANGUAGES CXX CUDA)
+
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+  message(FATAL_ERROR "In-source builds are not supported. Use: cmake --preset default")
+endif()
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+add_subdirectory(src "${CMAKE_BINARY_DIR}/src")
