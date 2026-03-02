@@ -1,6 +1,7 @@
 set(SIMD_EX_MOD_CUDA_TARGETS
   isprime
   isprime_appl_org_comp
+  silly_vector_add
 )
 
 foreach(target IN LISTS SIMD_EX_MOD_CUDA_TARGETS)
