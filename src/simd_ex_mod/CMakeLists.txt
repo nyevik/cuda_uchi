@@ -3,6 +3,7 @@ set(SIMD_EX_MOD_CUDA_TARGETS
   isprime_appl_org_comp
   silly_vector_add
   vector_add
+  3deuclid
 )
 
 foreach(target IN LISTS SIMD_EX_MOD_CUDA_TARGETS)
